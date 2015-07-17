@@ -13,8 +13,11 @@ var flash = require('connect-flash');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var posts = require('./routes/posts')
 
 var app = express();
+
+app.locals.moment = require('moment') //making a global variable app.locals
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -70,6 +73,7 @@ app.use(function(req, res, next) {
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/posts', posts)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
