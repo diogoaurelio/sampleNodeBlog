@@ -11,3 +11,6 @@ db.posts.find().pretty();
 
 db.categories.insert({ title: "tech" })
 db.categories.insert({ title: "Psycology"})
+
+db.posts.remove({})
+db.categories.update({ title: "Fasion" }, { title: "Fashion"})
